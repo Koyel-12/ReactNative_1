@@ -1,0 +1,123 @@
+<html>
+<head>
+<title>JavaScript Program to calculate Monthly Income of a Person</title>
+<style>
+    * {
+  box-sizing: border-box;
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+body{
+    background-color: #04AA6D;
+}
+</style>
+</head>
+<body>
+<table>
+<tr>
+<td> <input type="text" name="a" id="first" placeholder="Enter income"/> </td>
+</tr>
+<tr>
+<td> <button onclick="income ()">Submit</button> </td>
+</tr>
+</table>
+<div id="num"></div>
+</body>
+
+<script type="text/javascript">
+function income()
+{
+var income, com;
+income = parseInt(document.getElementById ("first").value);
+com = 0;
+if(income >= 50000)
+{
+com = 375 + (income * 16)/100;
+}
+else
+if (income <= 50000 && income >= 40000)
+{
+com = 370 + (income * 14)/100
+}
+else
+if (income <= 40000 && income >= 30000)
+{
+com = 325 + (income * 12)/100
+}
+else
+if (income <= 30000 && income >= 20000)
+{
+com = 300 + (income * 9)/100
+}
+else
+if (income <= 20000 && income >= 10000)
+{
+com = 250 + (income * 5)/100
+}
+else
+if (income <= 10000)
+{
+com = 200 + (income * 3)/100
+}
+document.getElementById ('num').innerHTML = "Commission : "+com;
+}
+</script>
+</html>
